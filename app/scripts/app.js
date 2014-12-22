@@ -9,16 +9,10 @@
  * Main module of the application.
  */
 angular
-  .module('twentyfourtyeightApp', [
-    'ngAnimate',
-    'ngAria',
-    'ngCookies',
-    'ngMessages',
-    'ngResource',
-    'ngRoute',
-    'ngSanitize',
-    'ngTouch'
-  ])
+  .module('twentyfourtyeightApp', ['Game'])
+  .controller('GameController', function(GameManager) {
+    this.game = GameManager;
+  });
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
