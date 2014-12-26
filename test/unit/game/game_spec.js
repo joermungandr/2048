@@ -1,9 +1,9 @@
-describe('Game module', function() {
+describe('Game', function() {
   describe('GameManager', function() {
     // Inject the Game module into this test
     beforeEach(module('Game'));
 
-    var gameManager, _gridService;
+    var gameManager, _gridService, $rootScope;
 
     beforeEach(module(function($provide) {
       _gridService = {
@@ -19,6 +19,7 @@ describe('Game module', function() {
 
     beforeEach(inject(function(GameManager, _$rootScope_) {
       gameManager = GameManager;
+      rootScope = _$rootScope_;
     }));
 
     describe('.movesAvailable', function() {
